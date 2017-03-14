@@ -1,0 +1,11 @@
+use_frameworks!
+
+target 'ZHTableViewGroupSwift_Example' do
+  pod 'ZHTableViewGroupSwift', :path => '../'
+
+  target 'ZHTableViewGroupSwift_Tests' do
+    inherit! :search_paths
+
+    
+  end
+end
