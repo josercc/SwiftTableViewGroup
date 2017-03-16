@@ -21,9 +21,10 @@ public class ZHTableViewGroup: NSObject {
 
     var cellCount:Int {
         get {
-            var count:Int = 0
+            var count:Int = 0 // 初始化默认 Cell 的数量为0
             for cell in self.cells {
-                count += cell.cellNumber
+                // 便利 cells 数组的 ZHTableViewCell 的对象
+                count += cell.cellNumber // 对ZHTableViewCell的 cell 数量进行累加
             }
             return count
         }
@@ -119,11 +120,13 @@ public class ZHTableViewGroup: NSObject {
             // 如果索引超出了总个数就返回 nil
             return nil
         }
-        var count:Int = 0
-        var tableViewCell:ZHTableViewCell?
+        var count:Int = 0 // 设置 cell 总数初始值
+        var tableViewCell:ZHTableViewCell? // 保存ZHTableViewCell变量
         for cell in self.cells {
-            count += cell.cellNumber
+            // 便利 cells 数组里面的ZHTableViewCell
+            count += cell.cellNumber // 累加 cell 的数量
             if indexPath.row < count {
+                // 当索引在当前ZHTableViewCell范围内 就返回ZHTableViewCell对象
                 tableViewCell = cell
                 break
             }
