@@ -1,0 +1,6 @@
+framework module ZHTableViewGroupSwift {
+  umbrella header "ZHTableViewGroupSwift-umbrella.h"
+
+  export *
+  module * { export * }
+}

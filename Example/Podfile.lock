@@ -1,0 +1,19 @@
+PODS:
+  - SnapKit (3.2.0)
+  - ZHTableViewGroupSwift (0.1.0)
+
+DEPENDENCIES:
+  - SnapKit (~> 3.2.0)
+  - ZHTableViewGroupSwift (from `../`)
+
+EXTERNAL SOURCES:
+  ZHTableViewGroupSwift:
+    :path: "../"
+
+SPEC CHECKSUMS:
+  SnapKit: 1ca44df72cfa543218d177cb8aab029d10d86ea7
+  ZHTableViewGroupSwift: 04dc021182167662314ab01fc7cecc155f2447f5
+
+PODFILE CHECKSUM: c6ef2e023a0011067bd9d02fb30acbd610a1a967
+
+COCOAPODS: 1.1.1

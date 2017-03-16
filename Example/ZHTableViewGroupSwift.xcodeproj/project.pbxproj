@@ -7,6 +7,11 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		5DB8A0FE1E7A153700A5A0F7 /* ZHOtherTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB8A0FD1E7A153700A5A0F7 /* ZHOtherTableViewCell.swift */; };
+		5DB8A1001E7A1A7800A5A0F7 /* ListCellViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DB8A0FF1E7A1A7800A5A0F7 /* ListCellViewController.swift */; };
+		5DF610401E79459B00991F9B /* ZHCellOneTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF6103F1E79459B00991F9B /* ZHCellOneTableViewCell.swift */; };
+		5DF610421E79526A00991F9B /* ZHBaseTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF610411E79526A00991F9B /* ZHBaseTableViewCell.swift */; };
+		5DF610441E79549900991F9B /* ZHCellTwoTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5DF610431E79549900991F9B /* ZHCellTwoTableViewCell.swift */; };
 		607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD51AFB9204008FA782 /* AppDelegate.swift */; };
 		607FACD81AFB9204008FA782 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACD71AFB9204008FA782 /* ViewController.swift */; };
 		607FACDB1AFB9204008FA782 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 607FACD91AFB9204008FA782 /* Main.storyboard */; };
@@ -28,10 +33,15 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		110652CEBD983E83FB9C19F5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		110652CEBD983E83FB9C19F5 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		1841D4449102902C05EFEB79 /* Pods-ZHTableViewGroupSwift_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHTableViewGroupSwift_Tests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZHTableViewGroupSwift_Tests/Pods-ZHTableViewGroupSwift_Tests.debug.xcconfig"; sourceTree = "<group>"; };
 		53B042A3067561D27705935E /* Pods-ZHTableViewGroupSwift_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHTableViewGroupSwift_Example.debug.xcconfig"; path = "Pods/Target Support Files/Pods-ZHTableViewGroupSwift_Example/Pods-ZHTableViewGroupSwift_Example.debug.xcconfig"; sourceTree = "<group>"; };
 		5A1BC89D1AE256B058731104 /* Pods_ZHTableViewGroupSwift_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZHTableViewGroupSwift_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		5DB8A0FD1E7A153700A5A0F7 /* ZHOtherTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHOtherTableViewCell.swift; sourceTree = "<group>"; };
+		5DB8A0FF1E7A1A7800A5A0F7 /* ListCellViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ListCellViewController.swift; sourceTree = "<group>"; };
+		5DF6103F1E79459B00991F9B /* ZHCellOneTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHCellOneTableViewCell.swift; sourceTree = "<group>"; };
+		5DF610411E79526A00991F9B /* ZHBaseTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHBaseTableViewCell.swift; sourceTree = "<group>"; };
+		5DF610431E79549900991F9B /* ZHCellTwoTableViewCell.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = ZHCellTwoTableViewCell.swift; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* ZHTableViewGroupSwift_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = ZHTableViewGroupSwift_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACD41AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACD51AFB9204008FA782 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -42,10 +52,10 @@
 		607FACE51AFB9204008FA782 /* ZHTableViewGroupSwift_Tests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = ZHTableViewGroupSwift_Tests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
-		7A0D004E79E2A58B38B8F038 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		7A0D004E79E2A58B38B8F038 /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 		8E9410B4FF673B753C9C92E9 /* Pods-ZHTableViewGroupSwift_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHTableViewGroupSwift_Example.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZHTableViewGroupSwift_Example/Pods-ZHTableViewGroupSwift_Example.release.xcconfig"; sourceTree = "<group>"; };
 		AD823A667F7B210EE9110CB8 /* Pods_ZHTableViewGroupSwift_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_ZHTableViewGroupSwift_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		B87ED2A762A940B3162EE433 /* ZHTableViewGroupSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = ZHTableViewGroupSwift.podspec; path = ../ZHTableViewGroupSwift.podspec; sourceTree = "<group>"; };
+		B87ED2A762A940B3162EE433 /* ZHTableViewGroupSwift.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = ZHTableViewGroupSwift.podspec; path = ../ZHTableViewGroupSwift.podspec; sourceTree = "<group>"; };
 		B9E161A99A3FC6A3B24C3E62 /* Pods-ZHTableViewGroupSwift_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-ZHTableViewGroupSwift_Tests.release.xcconfig"; path = "Pods/Target Support Files/Pods-ZHTableViewGroupSwift_Tests/Pods-ZHTableViewGroupSwift_Tests.release.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -78,6 +88,17 @@
 			name = Frameworks;
 			sourceTree = "<group>";
 		};
+		5DF6103C1E7940C500991F9B /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				5DF6103F1E79459B00991F9B /* ZHCellOneTableViewCell.swift */,
+				5DF610411E79526A00991F9B /* ZHBaseTableViewCell.swift */,
+				5DF610431E79549900991F9B /* ZHCellTwoTableViewCell.swift */,
+				5DB8A0FD1E7A153700A5A0F7 /* ZHOtherTableViewCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
 		607FACC71AFB9204008FA782 = {
 			isa = PBXGroup;
 			children = (
@@ -102,8 +123,10 @@
 		607FACD21AFB9204008FA782 /* Example for ZHTableViewGroupSwift */ = {
 			isa = PBXGroup;
 			children = (
+				5DF6103C1E7940C500991F9B /* Cells */,
 				607FACD51AFB9204008FA782 /* AppDelegate.swift */,
 				607FACD71AFB9204008FA782 /* ViewController.swift */,
+				5DB8A0FF1E7A1A7800A5A0F7 /* ListCellViewController.swift */,
 				607FACD91AFB9204008FA782 /* Main.storyboard */,
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
@@ -361,8 +384,13 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				5DF610441E79549900991F9B /* ZHCellTwoTableViewCell.swift in Sources */,
+				5DF610421E79526A00991F9B /* ZHBaseTableViewCell.swift in Sources */,
+				5DB8A0FE1E7A153700A5A0F7 /* ZHOtherTableViewCell.swift in Sources */,
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				5DB8A1001E7A1A7800A5A0F7 /* ListCellViewController.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
+				5DF610401E79459B00991F9B /* ZHCellOneTableViewCell.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
