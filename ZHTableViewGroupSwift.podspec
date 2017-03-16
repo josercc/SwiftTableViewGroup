@@ -8,7 +8,7 @@
 
 Pod::Spec.new do |s|
   s.name             = 'ZHTableViewGroupSwift'
-  s.version          = '0.1.0'
+  s.version          = '0.1.1'
   s.summary          = 'ZHTableViewGroup为 UITableView 而生'
   s.homepage         = 'https://github.com/josercc/ZHTableViewGroupSwift'
   s.license          = { :type => 'MIT', :file => 'LICENSE' }

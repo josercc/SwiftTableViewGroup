@@ -31,19 +31,19 @@ public class ZHTableViewGroup: NSObject {
 
     
     public func addCell(completionHandle:ZHTableViewGroupAddCellCompletionHandle) {
-        var cell = ZHTableViewCell()
+        let cell = ZHTableViewCell()
         completionHandle(cell)
         cells.append(cell)
     }
 
     public func addHeader(completionHandle:ZHTableViewGroupAddHeaderFooterCompletionHandle) {
-        var header = ZHTableViewHeaderFooter(style: .header)
+        let header = ZHTableViewHeaderFooter(style: .header)
         completionHandle(header)
         self.header = header
     }
 
     public func addFooter(completionHandle:ZHTableViewGroupAddHeaderFooterCompletionHandle) {
-        var footer = ZHTableViewHeaderFooter(style: .footer)
+        let footer = ZHTableViewHeaderFooter(style: .footer)
         completionHandle(footer)
         self.footer = footer
     }
