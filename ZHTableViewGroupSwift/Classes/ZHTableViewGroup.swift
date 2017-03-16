@@ -12,13 +12,14 @@ public typealias ZHTableViewGroupAddCellCompletionHandle = (_ cell:ZHTableViewCe
 public typealias ZHTableViewGroupAddHeaderFooterCompletionHandle = (_ headerFooter:ZHTableViewHeaderFooter) -> Void
 
 public class ZHTableViewGroup: NSObject {
-    public var cells:[ZHTableViewCell] = []
 
-    var header:ZHTableViewHeaderFooter?
+    var cells:[ZHTableViewCell] = []
 
-    var footer:ZHTableViewHeaderFooter?
+    public var header:ZHTableViewHeaderFooter?
 
-    public var cellCount:Int {
+    public var footer:ZHTableViewHeaderFooter?
+
+    var cellCount:Int {
         get {
             var count:Int = 0
             for cell in self.cells {
@@ -53,7 +54,7 @@ public class ZHTableViewGroup: NSObject {
     ///   - tableView: 对应的表格 可能为 nil
     ///   - indexPath: 对应的 IndexPath 索引
     /// - Returns: UITableViewCell可能为 nil
-    public func cellForTableView(tableView:UITableView?, atIndexPath indexPath:IndexPath) -> UITableViewCell? {
+    func cellForTableView(tableView:UITableView?, atIndexPath indexPath:IndexPath) -> UITableViewCell? {
         guard let tableView = tableView else {
             // 当表格不存在返回 nil
             return nil
@@ -71,7 +72,7 @@ public class ZHTableViewGroup: NSObject {
         return cell
     }
 
-    public func headerFooterForStyle(tableView:UITableView?, style:ZHTableViewHeaderFooterStyle) -> UITableViewHeaderFooterView? {
+    func headerFooterForStyle(tableView:UITableView?, style:ZHTableViewHeaderFooterStyle) -> UITableViewHeaderFooterView? {
         guard let tableView = tableView else {
             return nil
         }
@@ -93,7 +94,7 @@ public class ZHTableViewGroup: NSObject {
         return tableView.dequeueReusableHeaderFooterView(withIdentifier: identifier)
     }
 
-    public func registerHeaderFooterCell(tableView:UITableView) {
+    func registerHeaderFooterCell(tableView:UITableView) {
         if let headerIdentifier = self.header?.identifier {
             tableView.register(self.header?.anyClass, forHeaderFooterViewReuseIdentifier: headerIdentifier)
         }
@@ -113,7 +114,7 @@ public class ZHTableViewGroup: NSObject {
     ///
     /// - Parameter indexPath:  IndexPath 的索引
     /// - Returns: ZHTableViewCell可能为 nil
-    public func tableViewCellForIndexPath(indexPath:IndexPath) -> ZHTableViewCell? {
+    func tableViewCellForIndexPath(indexPath:IndexPath) -> ZHTableViewCell? {
         guard indexPath.row < self.cellCount else {
             // 如果索引超出了总个数就返回 nil
             return nil

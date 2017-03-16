@@ -24,7 +24,7 @@ public class ZHTableViewDataSource: NSObject {
     }
 
     /// ZHTableViewGroup的数组
-    public var groups:[ZHTableViewGroup] = []
+    private var groups:[ZHTableViewGroup] = []
 
     /// 初始化ZHTableViewDataSource数据源
     ///
@@ -35,14 +35,14 @@ public class ZHTableViewDataSource: NSObject {
     }
 
     /// 托管 UITableView 的对象
-    var tableView:UITableView
+    private var tableView:UITableView
 
     public func reloadTableViewData() {
         self.registerClass()
         self.tableView.reloadData()
     }
 
-    func registerClass() {
+    private func registerClass() {
         for group in self.groups {
             group.registerHeaderFooterCell(tableView: self.tableView)
         }
@@ -86,7 +86,7 @@ public class ZHTableViewDataSource: NSObject {
     ///   - dataSource: ZHTableViewDataSource的数据源可以为 nil
     ///   - section: 分组的索引
     /// - Returns: 对应分组对象可能为 nil
-    class func groupForSection(dataSource:ZHTableViewDataSource?, section:Int) -> ZHTableViewGroup? {
+    private class func groupForSection(dataSource:ZHTableViewDataSource?, section:Int) -> ZHTableViewGroup? {
         guard let dataSource = dataSource else {
             // 当用户还没有创建ZHTableViewDataSource对象返回 nil
             return nil
@@ -98,7 +98,7 @@ public class ZHTableViewDataSource: NSObject {
         return dataSource.groups[section]
     }
 
-    class func cellForIndexPath(dataSource:ZHTableViewDataSource?, atIndexPath indexPath:IndexPath) -> ZHTableViewCell? {
+    private class func cellForIndexPath(dataSource:ZHTableViewDataSource?, atIndexPath indexPath:IndexPath) -> ZHTableViewCell? {
         guard let group = groupForSection(dataSource: dataSource, section: indexPath.section) else {
             return nil
         }
@@ -124,7 +124,7 @@ public class ZHTableViewDataSource: NSObject {
         return heightWithCustomHandle(height: cell.height, customCompletionHandle: customHeightCompletionHandle)
     }
 
-    class func heightWithCustomHandle(height:CGFloat, customCompletionHandle:ZHTableViewDataSourceCustomHeightCompletionHandle?) -> CGFloat {
+    private class func heightWithCustomHandle(height:CGFloat, customCompletionHandle:ZHTableViewDataSourceCustomHeightCompletionHandle?) -> CGFloat {
         if height == CGFloat(NSNotFound) {
             guard let customCompletionHandle = customCompletionHandle else {
                 return 0
@@ -151,7 +151,7 @@ public class ZHTableViewDataSource: NSObject {
         return heightForHeaderFooterInSection(dataSource: dataSource, section: section, customHeightCompletionHandle: customHeightCompletionHandle, headerFooterStyle: .footer)
     }
 
-    class func heightForHeaderFooterInSection(dataSource:ZHTableViewDataSource?, section:Int, customHeightCompletionHandle:ZHTableViewDataSourceCustomHeightCompletionHandle?, headerFooterStyle:ZHTableViewHeaderFooterStyle) -> CGFloat {
+    private class func heightForHeaderFooterInSection(dataSource:ZHTableViewDataSource?, section:Int, customHeightCompletionHandle:ZHTableViewDataSourceCustomHeightCompletionHandle?, headerFooterStyle:ZHTableViewHeaderFooterStyle) -> CGFloat {
         guard let group = groupForSection(dataSource: dataSource, section: section) else {
             return 0
         }
@@ -179,7 +179,7 @@ public class ZHTableViewDataSource: NSObject {
         return viewHeaderFooterInSection(dataSource: dataSource, section: section, style: .footer)
     }
 
-    class func viewHeaderFooterInSection(dataSource:ZHTableViewDataSource?, section:Int, style:ZHTableViewHeaderFooterStyle) -> UITableViewHeaderFooterView? {
+    private class func viewHeaderFooterInSection(dataSource:ZHTableViewDataSource?, section:Int, style:ZHTableViewHeaderFooterStyle) -> UITableViewHeaderFooterView? {
         guard let group = groupForSection(dataSource: dataSource, section: section) else {
             return nil
         }

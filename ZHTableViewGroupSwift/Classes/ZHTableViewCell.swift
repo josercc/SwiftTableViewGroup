@@ -18,9 +18,9 @@ public class ZHTableViewCell: NSObject {
 
     public var cellNumber:Int = 0
 
-    var configCompletionHandle:ZHTableViewCellCompletionHandle?
+    private var configCompletionHandle:ZHTableViewCellCompletionHandle?
 
-    var didSelectRowCompletionHandle:ZHTableViewCellCompletionHandle?
+    private var didSelectRowCompletionHandle:ZHTableViewCellCompletionHandle?
 
     public var anyClass:AnyClass?
 
