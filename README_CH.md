@@ -1,7 +1,15 @@
+---
+typora-root-url: ../SwiftTableViewGroup/
+---
+
 
 # SwiftTableViewGroup
 
 > ❇️`SwiftTableViewGroup`是居于之前`ZHTableViewGroupSwift`利用最新的`Swift5.1`的`@_functionBuilder`的语法特性结合最新的`SwiftUI`的设计模式研发的。
+
+[TOC]
+
+
 
 ## 演示
 
@@ -18,6 +26,11 @@
 ```shell
 https://github.com/josercc/SwiftTableViewGroup
 ```
+
+## 要求
+
+- `Xcode11`
+- `Swift5.1`
 
 ## 怎么使用
 
