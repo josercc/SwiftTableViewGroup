@@ -1,7 +1,3 @@
----
-typora-root-url: ../../../../../System/Volumes/Data/Users/zhangxing/Downloads/SwiftTableViewGroup
-typora-copy-images-to: ../../../../../System/Volumes/Data/Users/zhangxing/Downloads/SwiftTableViewGroup/images
----
 
 # SwiftTableViewGroup
 
