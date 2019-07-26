@@ -7,7 +7,7 @@ typora-copy-images-to: ../../../../../System/Volumes/Data/Users/zhangxing/Downlo
 
 > ❇️`SwiftTableViewGroup`是居于之前`ZHTableViewGroupSwift`利用最新的`Swift5.1`的`@_functionBuilder`的语法特性结合最新的`SwiftUI`的设计模式研发的。
 
-## Demo 演示
+## 演示
 
 ![image-20190726143607274](/images/2019-07-26-063607.png)
 
@@ -25,7 +25,7 @@ https://github.com/josercc/SwiftTableViewGroup
 
 ## 怎么使用
 
-### 代码模板(非真正的代码)
+### 代码模板(非真正的代码)(Code template (not real code))
 
 ```swift
 let tableView = UITableView()
@@ -41,7 +41,7 @@ dataSource.setup {
 dataSource.reloadData
 ```
 
-### 创建一个静态的文本列表
+### 创建一个静态的文本列表(Create a static text list)
 
 ```swift
 let source:[String] = [
@@ -136,7 +136,7 @@ settingDataSource.setup {
 
 > 可以拿到TableView 的 Sections 数组对立面的元素属性进行变更之后重新调用`reloadData`即可。
 
-### ❓怎么监听`UIScrollView`的其他代理时间
+### ❓怎么监听`UIScrollView`的其他代理
 
 ```swift
 public struct ScrollViewDelegate {

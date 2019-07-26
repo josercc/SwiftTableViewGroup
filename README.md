@@ -1,99 +1,170 @@
+---
+typora-root-url: ../../../../../System/Volumes/Data/Users/zhangxing/Downloads/SwiftTableViewGroup
+typora-copy-images-to: ../../../../../System/Volumes/Data/Users/zhangxing/Downloads/SwiftTableViewGroup/images
+---
 
-# OC 版本请移步[这里](https://github.com/josercc/ZHTableViewGroup)
-# ZHTableViewGroup为 UITableView 而生
+# SwiftTableViewGroup
 
-![](http://olg3v8vew.bkt.clouddn.com/2017-03-16-38.gif)
+# [🇨🇳(中文)](./README_CH.md)
 
-## 怎么安装
+> ❇️`SwiftTableViewGroup` is the previous one. ZHTableViewGroupSwift` is developed using the syntax of the latest `Swift5.1` `@_functionBuilder` combined with the latest `SwiftUI` design pattern.
 
-```ruby
-pod 'ZHTableViewGroupSwift'
+## Demo
+
+![image-20190726143607274](/images/2019-07-26-063607.png)
+
+![image-20190726143633679](/images/2019-07-26-063634.png)
+
+![image-20190726143714253](/images/image-20190726143714253.png)
+
+## 安装
+
+### Swift Package Manager(Xcode 11)
+
+```shell
+https://github.com/josercc/SwiftTableViewGroup
 ```
 
+## How to use
 
-
-### 怎么使用
-
-1. ### 初始化 ZHTableViewDataSource
-
-   ```swift
-   var dataSource:ZHTableViewDataSource?
-   self.dataSource = ZHTableViewDataSource(tableView: self.tableView)
-   ```
-
-2. ### 初始化 ZHTableViewGroup 
-
-   ```swift
-   self.dataSource?.addGroup(completionHandle: { (group) in
-   	//code
-   }
-   ```
-
-3. ### 初始化 ZHTableViewCell
-
-   ```swift
-   group.addCell(completionHandle: { (cell) in
-   	//code
-   }
-   ```
-
-4. ### 配置 ZHTableViewCell
-
-   ```swift
-     cell.anyClass = UITableViewCell.self
-     cell.cellNumber = self.cellTexts.count
-     cell.identifier = "UITableViewCellIdentifier"
-     cell.setConfigCompletionHandle(configCompletionHandle: { (cell, indexPath) in
-         let string = self.cellTexts[indexPath.row]
-         cell.textLabel?.text = string
-         if self.selectTitles.contains(string) {
-             cell.accessoryType = .checkmark
-         } else {
-             cell.accessoryType = .none
-         }
-     })
-     cell.setDidSelectRowCompletionHandle(didSelectRowCompletionHandle: { (cell, indexPath) in
-         let string = self.cellTexts[indexPath.row]
-         if self.selectTitles.contains(string) {
-             guard let index = self.selectTitles.index(of: string) else {
-                 return
-             }
-             self.selectTitles.remove(at: index)
-         } else {
-             self.selectTitles.append(string)
-         }
-         self.tableView.reloadData()
-     })
-   ```
-
-5. ### 配置 UITableView的代理
-
-   ```swift
-       // 设置 UITableView 的组个数
-       public override func numberOfSections(in tableView: UITableView) -> Int {
-           return ZHTableViewDataSource.numberOfSections(dataSource: self.dataSource)
-       }
-
-       // 设置组 Cell 的个数
-       public override func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
-           return ZHTableViewDataSource.numberOfRowsInSection(dataSource: self.dataSource, section: section)
-       }
-
-       // 设置 Cell
-       public override func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-           let cell = ZHTableViewDataSource.cellForRowAt(dataSource: self.dataSource, indexPath: indexPath)
-           cell.selectionStyle = .none
-           return cell
-       }
-
-       public override func  tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
-           tableView.deselectRow(at: indexPath, animated: true)
-           ZHTableViewDataSource.didSelectRowAt(dataSource: self.dataSource, indexPath: indexPath)
-       }
-   ```
-
-### 6 清除配置
+### Code template (not real code)
 
 ```swift
-self.dataSource?.clearData()
+let tableView = UITableView()
+var dataSource = TableView(tableView:tableView)
+dataSource.setup {
+  /// Header
+  TableViewHeaderFooterView
+  /// Cell
+  TableViewCell
+  /// Footer
+  TableViewHeaderFooterView
+}
+dataSource.reloadData
 ```
+
+### Create a static text list)
+
+```swift
+let source:[String] = [
+    "Normal list text",
+    "Complex setup interface",
+]
+func steupTableView() {
+        self.dataSource.setup {
+          	/// Create a TableViewCell with a default type of UITableViewCell
+            TableCell { (tableCell, blockType, cell, index) in
+                /// Calling Config and DidSlectRow callbacks without executing this method
+                tableCell.makeContentBlock(type: blockType,
+                                           cell: cell,
+                                           index: index,
+                                           configContent: CellBlockContent<UITableViewCell> {(cell,index) in
+                                            cell.textLabel?.text = source[index]
+                                            cell.accessoryType = .disclosureIndicator
+                    },
+                                           didSelectRowContent: self.didSelectRowContent())
+            }
+         
+            .number(source.count) /// Set the number of cells
+            .height(45)
+        }
+        self.dataSource.reloadData()
+    }
+    ///The callbacks for config and didSelectRow can be raised separately to prevent the code from being messy
+    func didSelectRowContent() -> CellBlockContent<UITableViewCell> {
+      	/// The generic type of CellBlockContent must match the type of the created declaration. Otherwise, the callback cannot be completed.
+        CellBlockContent<UITableViewCell> {(cell,index) in
+        }
+    }
+```
+
+![image-20190726143607274](/images/2019-07-26-063607.png)
+
+### Create complex interfaces
+
+```swift
+var settingDataSource = TableView(tableView: tableView)
+settingDataSource.setup {
+  	/// Create a Header
+    TableHeaderFooterView(SettingHeaderView.self, .header,{ (tableHeader, header, section) in
+        tableHeader.makeContentBlock(headerFooter: header, section: section, configContent: HeaderFooterBlockContent<SettingHeaderView> {(header,section) in
+            header.textLabel?.text = "Header"
+        })
+    })
+    .height(49)
+  	/// Create a custom UITableViewCell automatic height
+    TableCell(IntrinsicContentTextLabelCell.self)
+  	/// Create a default UITableViewCell dynamic change quantity
+    TableCell { (tableCell, blockType, cell, index) in
+        tableCell.makeContentBlock(type: blockType, cell: cell, index: index, configContent: CellBlockContent<UITableViewCell> {(cell,index) in
+            cell.textLabel?.text = "\(index) 点击我会增加哦"
+            }, didSelectRowContent: CellBlockContent<UITableViewCell> {(cell,index) in
+                let number = tableCell.number + 1
+                tableCell.number(number)
+                settingDataSource.reloadData()
+        })
+    }
+  	/// Create a default UITableViewCell dynamic change height
+    TableCell { (tableCell, blockType, cell, index) in
+        tableCell.makeContentBlock(type: blockType,
+                                   cell: cell,
+                                   index: index,
+                                   configContent: CellBlockContent<UITableViewCell> {(cell,index) in
+                                    cell.textLabel?.text = "点击我改变高度"
+            },
+                                   didSelectRowContent: CellBlockContent<UITableViewCell> {(cell,index) in
+                                    let height = tableCell.height == 44 ? 100 : 44;
+                                    tableCell.height(CGFloat(height))
+                                    settingDataSource.reloadData()
+        })
+    }
+    .height(44)
+}
+```
+
+![image-20190726143714253](/images/image-20190726143714253.png)
+
+#### Dynamic change quantity
+
+![image-20190726145544399](/images/image-20190726145544399.png)
+
+#### Dynamic height
+
+![image-20190726145605726](/images/image-20190726145605726.png)
+
+## Problem
+
+### ❓How to dynamically insert or delete some elements
+
+> You can change the element properties of the opposite side of the TableView's Sections array and then call `reloadData`.
+
+### ❓How to listen to other agents of `UIScrollView`
+
+```swift
+public struct ScrollViewDelegate {
+    public var scrollViewDidScroll:((_ scrollView: UIScrollView) -> Void)?
+    public var scrollViewWillBeginDragging:((_ scrollView: UIScrollView) -> Void)?
+    public var scrollViewWillEndDragging:((_ scrollView: UIScrollView, _ velocity: CGPoint, _ targetContentOffset: UnsafeMutablePointer<CGPoint>) -> Void)?
+    public var scrollViewDidEndDragging:((_ scrollView: UIScrollView, _ decelerate: Bool) -> Void)?
+    public var scrollViewWillBeginDecelerating:((_ scrollView: UIScrollView) -> Void)?
+    public var  scrollViewDidEndDecelerating:((_ scrollView: UIScrollView) -> Void)?
+}
+
+```
+
+> Can implement the above proxy method of `UITableView`
+
+Example
+
+```swift
+tableView.scrollDelegate?.scrollViewDidScroll = { scrollView in
+}
+```
+
+### I feel that there are too few supported features.
+
+> Can submit PR or mention ISSUSE
+
+## contact me
+
+- Email: josercc@163.com
