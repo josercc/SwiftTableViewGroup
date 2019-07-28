@@ -30,8 +30,9 @@ class ViewController: UIViewController {
     }()
     
     let source:[String] = [
-        "普通的列表文本",
-        "复杂的设置界面",
+        "Normal Table View",
+        "Detail Table View",
+        "Normal Collection View"
     ]
     
     override func viewDidLoad() {
@@ -45,45 +46,44 @@ class ViewController: UIViewController {
     
     func steupTableView() {
         self.dataSource.setup {
-            TableCell { (tableCell, blockType, cell, index) in
-                tableCell.makeContentBlock(type: blockType,
-                                           cell: cell,
-                                           index: index,
-                                           configContent: CellBlockContent<UITableViewCell> {(cell,index) in
-                                            cell.textLabel?.text = self.source[index]
-                                            cell.accessoryType = .disclosureIndicator
-                    },
-                                           didSelectRowContent: self.didSelectRowContent())
+            TableCell { content, contentCell in
+                content.configuration(UITableViewCell.self) { (cell, index) in
+                    cell.textLabel?.text = self.source[index]
+                    cell.accessoryType = .disclosureIndicator
+                }
+                content.didSelectRow(UITableViewCell.self) { (cell, index) in
+                    let detail = DetailViewController()
+                    detail.title = self.source[index]
+                    if index == 0 {
+                        detail.dataSource = self.setupNormalList(tableView: detail.tableView)
+                        self.navigationController?.pushViewController(detail, animated: true)
+                    } else if index == 1 {
+                        detail.dataSource = self.setupCustomList(tableView: detail.tableView)
+                        self.navigationController?.pushViewController(detail, animated: true)
+                    } else if index == 2 {
+                        let controller = NormalCollectionViewController()
+                        self.navigationController?.pushViewController(controller, animated: true)
+                    }
+                    
+                }
             }
             .number(self.source.count)
             .height(45)
         }
         self.dataSource.reloadData()
     }
-    
-    func didSelectRowContent() -> CellBlockContent<UITableViewCell> {
-        CellBlockContent<UITableViewCell> {(cell,index) in
-            let detail = DetailViewController()
-            detail.title = self.source[index]
-            if index == 0 {
-                detail.dataSource = self.setupNormalList(tableView: detail.tableView)
-            } else if index == 1 {
-                detail.dataSource = self.setupCustomList(tableView: detail.tableView)
-            }
-            self.navigationController?.pushViewController(detail, animated: true)
-        }
-    }
-    
-    
     //MARK: - 普通的列表界面
     func setupNormalList(tableView:UITableView) -> TableView {
-        var normalDataSource = TableView(tableView: tableView)
+        let normalDataSource = TableView(tableView: tableView)
         let number = arc4random() % 10 + 2
         normalDataSource.setup {
-            TableCell(MyCustomCell.self, { (tableCell, blockType, cell, index) in
-                tableCell.makeContentBlock(type: blockType, cell: cell, index: index, configContent: CellBlockContent<MyCustomCell> {(cell, index) in
+            TableCell(MyCustomCell.self, { content,contentCell in
+                content.configuration(MyCustomCell.self) { (cell, index) in
                     cell.textLabel?.text = "\(index) \(cell.name)"
-                })
+                }
+                content.customHeight(MyCustomCell.self) { (cell, index) -> CGFloat in
+                    return 100
+                }
             })
             .number(Int(number))
             .height(45)
@@ -93,36 +93,36 @@ class ViewController: UIViewController {
     
     //MARK: - 复杂的设置界面
     func setupCustomList(tableView:UITableView) -> TableView {
-        var settingDataSource = TableView(tableView: tableView)
+        let settingDataSource = TableView(tableView: tableView)
         settingDataSource.setup {
-            TableHeaderFooterView(SettingHeaderView.self, .header,{ (tableHeader, header, section) in
-                tableHeader.makeContentBlock(headerFooter: header, section: section, configContent: HeaderFooterBlockContent<SettingHeaderView> {(header,section) in
-                    header.textLabel?.text = "Header"
-                })
+            TableHeaderView(SettingHeaderView.self, { content,contentHeader in
+                content.configuration(SettingHeaderView.self) { (view, section) in
+                    view.textLabel?.text = "Header"
+                }
             })
             .height(49)
+            
             TableCell(IntrinsicContentTextLabelCell.self)
-            TableCell { (tableCell, blockType, cell, index) in
-                tableCell.makeContentBlock(type: blockType, cell: cell, index: index, configContent: CellBlockContent<UITableViewCell> {(cell,index) in
+            TableCell { content,contentCell in
+                content.configuration(UITableViewCell.self) { (cell, index) in
                     cell.textLabel?.text = "\(index) 点击我会增加哦"
-                    }, didSelectRowContent: CellBlockContent<UITableViewCell> {(cell,index) in
-                        let number = tableCell.number + 1
-                        tableCell.number(number)
-                        settingDataSource.reloadData()
-                })
+                }
+                content.didSelectRow(UITableViewCell.self) { (cell, index) in
+                    let number = contentCell.number + 1;
+                    contentCell.number(number)
+                    settingDataSource.reloadData()
+                }
             }
-            TableCell { (tableCell, blockType, cell, index) in
-                tableCell.makeContentBlock(type: blockType,
-                                           cell: cell,
-                                           index: index,
-                                           configContent: CellBlockContent<UITableViewCell> {(cell,index) in
-                                            cell.textLabel?.text = "点击我改变高度"
-                    },
-                                           didSelectRowContent: CellBlockContent<UITableViewCell> {(cell,index) in
-                                            let height = tableCell.height == 44 ? 100 : 44;
-                                            tableCell.height(CGFloat(height))
-                                            settingDataSource.reloadData()
-                })
+            .height(44)
+            TableCell { content,contentCell in
+                content.configuration(UITableViewCell.self) { (cell, index) in
+                    cell.textLabel?.text = "点击我改变高度"
+                }
+                content.didSelectRow(UITableViewCell.self) { (cell, index) in
+                    let height = contentCell.height == 44 ? 100 : 44;
+                    contentCell.height(CGFloat(height))
+                    settingDataSource.reloadData()
+                }
             }
             .height(44)
         }

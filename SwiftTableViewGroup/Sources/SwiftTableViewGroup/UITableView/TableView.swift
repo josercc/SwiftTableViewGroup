@@ -8,7 +8,7 @@
 import Foundation
 import UIKit.UITableView
 
-public struct TableView : DataNode {
+public class TableView : DataNode {
     public var sections:[TableSection] = []
     public let tableView:UITableView
     public lazy var delegate:TableViewDelegate = {
@@ -19,19 +19,19 @@ public struct TableView : DataNode {
         self.tableView = tableView
     }
     
-    public mutating func setup(@TableBuilder _ block:() -> DataNode) {
+    public func setup(@TableBuilder _ block:() -> DataNode) {
         let node = block()
-        if let group = node as? SectionGroup {
+        if let group = node as? TableSectionGroup {
             sections = group.sections
         } else {
             let section = TableSection {
-                SectionBuilder.tableSection(nodes: [node])
+                TableSectionBuilder.tableSection(nodes: [node])
             }
             sections = [section]
         }
     }
     
-    public mutating func reloadData() {
+    public func reloadData() {
         self.registerClass()
         /// 检测到表格的代理还没有设置
         if self.tableView.dataSource == nil {
@@ -64,11 +64,30 @@ public struct TableView : DataNode {
     }
 }
 
+public protocol TableContentView {
+    var height:CGFloat { get set}
+    @discardableResult
+    func height(_ height:CGFloat) -> Self
+}
 
-extension TableView {
-    public enum TableViewContentType: String {
-        case header = "header"
-        case footer = "footer"
-        case cell = "cell"
+public struct TableContentViewKey {
+    static var height = "height"
+}
+
+extension TableContentView {
+    public var height:CGFloat {
+        get {
+            objc_getAssociatedObject(self, &TableContentViewKey.height) as? CGFloat ?? -1
+        }
+        set {
+            objc_setAssociatedObject(self, &TableContentViewKey.height, newValue, objc_AssociationPolicy.OBJC_ASSOCIATION_RETAIN_NONATOMIC)
+        }
     }
+    @discardableResult
+    public func height(_ height:CGFloat) -> Self {
+        var view = self
+        view.height = height
+        return view
+    }
+    
 }

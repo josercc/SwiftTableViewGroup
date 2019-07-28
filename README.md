@@ -20,6 +20,8 @@ typora-root-url: ../SwiftTableViewGroup
 
 ![image-20190726143714253](/images/image-20190726143714253.png)
 
+![Simulator Screen Shot - iPhone Xʀ - 2019-07-27 at 21.43.43](/images/Simulator Screen Shot - iPhone Xʀ - 2019-07-27 at 21.43.43.png)
+
 ## 安装
 
 ### Swift Package Manager(Xcode 11)

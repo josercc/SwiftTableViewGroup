@@ -17,6 +17,7 @@
 		5D6BFB2122DF191F002CB8F6 /* SwiftTableViewGroup in Frameworks */ = {isa = PBXBuildFile; productRef = 5D6BFB2022DF191F002CB8F6 /* SwiftTableViewGroup */; };
 		5D6BFB2322DF2443002CB8F6 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6BFB2222DF2443002CB8F6 /* DetailViewController.swift */; };
 		5D6BFB2522DF28A1002CB8F6 /* Setting.swift in Sources */ = {isa = PBXBuildFile; fileRef = 5D6BFB2422DF28A1002CB8F6 /* Setting.swift */; };
+		7FDA193E22EC769B0002D038 /* NormalCollectionViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7FDA193D22EC769B0002D038 /* NormalCollectionViewController.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -30,6 +31,7 @@
 		5D6BFB1922DF1912002CB8F6 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D6BFB2222DF2443002CB8F6 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		5D6BFB2422DF28A1002CB8F6 /* Setting.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Setting.swift; sourceTree = "<group>"; };
+		7FDA193D22EC769B0002D038 /* NormalCollectionViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = NormalCollectionViewController.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -74,6 +76,7 @@
 				5D6BFB1922DF1912002CB8F6 /* Info.plist */,
 				5D6BFB2222DF2443002CB8F6 /* DetailViewController.swift */,
 				5D6BFB2422DF28A1002CB8F6 /* Setting.swift */,
+				7FDA193D22EC769B0002D038 /* NormalCollectionViewController.swift */,
 			);
 			path = SwiftTableViewGroupApp;
 			sourceTree = "<group>";
@@ -166,6 +169,7 @@
 				5D6BFB2522DF28A1002CB8F6 /* Setting.swift in Sources */,
 				5D6BFB1022DF1910002CB8F6 /* ViewController.swift in Sources */,
 				5D6BFB0C22DF1910002CB8F6 /* AppDelegate.swift in Sources */,
+				7FDA193E22EC769B0002D038 /* NormalCollectionViewController.swift in Sources */,
 				5D6BFB0E22DF1910002CB8F6 /* SceneDelegate.swift in Sources */,
 				5D6BFB2322DF2443002CB8F6 /* DetailViewController.swift in Sources */,
 			);
