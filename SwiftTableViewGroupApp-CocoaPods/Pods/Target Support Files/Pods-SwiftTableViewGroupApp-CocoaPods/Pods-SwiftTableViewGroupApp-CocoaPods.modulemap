@@ -1,0 +1,6 @@
+module Pods_SwiftTableViewGroupApp_CocoaPods {
+  umbrella header "Pods-SwiftTableViewGroupApp-CocoaPods-umbrella.h"
+
+  export *
+  module * { export * }
+}

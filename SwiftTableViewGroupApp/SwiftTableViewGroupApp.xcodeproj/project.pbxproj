@@ -20,6 +20,13 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		5D26352A22EAE7C600D43817 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		5D26352C22EAE7C600D43817 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
+		5D26352E22EAE7C600D43817 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		5D26353122EAE7C600D43817 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/Main.storyboard; sourceTree = "<group>"; };
+		5D26353322EAE7C900D43817 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		5D26353622EAE7C900D43817 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		5D26353822EAE7C900D43817 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		5D6BFB0822DF1910002CB8F6 /* SwiftTableViewGroupApp.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = SwiftTableViewGroupApp.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		5D6BFB0B22DF1910002CB8F6 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		5D6BFB0D22DF1910002CB8F6 /* SceneDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SceneDelegate.swift; sourceTree = "<group>"; };
@@ -45,10 +52,25 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		5D26352922EAE7C600D43817 /* SwiftTableViewGroupApp-Cocoapods */ = {
+			isa = PBXGroup;
+			children = (
+				5D26352A22EAE7C600D43817 /* AppDelegate.swift */,
+				5D26352C22EAE7C600D43817 /* SceneDelegate.swift */,
+				5D26352E22EAE7C600D43817 /* ViewController.swift */,
+				5D26353022EAE7C600D43817 /* Main.storyboard */,
+				5D26353322EAE7C900D43817 /* Assets.xcassets */,
+				5D26353522EAE7C900D43817 /* LaunchScreen.storyboard */,
+				5D26353822EAE7C900D43817 /* Info.plist */,
+			);
+			path = "SwiftTableViewGroupApp-Cocoapods";
+			sourceTree = "<group>";
+		};
 		5D6BFAFF22DF1910002CB8F6 = {
 			isa = PBXGroup;
 			children = (
 				5D6BFB0A22DF1910002CB8F6 /* SwiftTableViewGroupApp */,
+				5D26352922EAE7C600D43817 /* SwiftTableViewGroupApp-Cocoapods */,
 				5D6BFB0922DF1910002CB8F6 /* Products */,
 				5D6BFB1F22DF191F002CB8F6 /* Frameworks */,
 			);
@@ -174,6 +196,22 @@
 /* End PBXSourcesBuildPhase section */
 
 /* Begin PBXVariantGroup section */
+		5D26353022EAE7C600D43817 /* Main.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D26353122EAE7C600D43817 /* Base */,
+			);
+			name = Main.storyboard;
+			sourceTree = "<group>";
+		};
+		5D26353522EAE7C900D43817 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				5D26353622EAE7C900D43817 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
 		5D6BFB1122DF1910002CB8F6 /* Main.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (

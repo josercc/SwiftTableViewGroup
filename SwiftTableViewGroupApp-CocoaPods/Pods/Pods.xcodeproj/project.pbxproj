@@ -1,0 +1,612 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 50;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		06B1F37B18316F5C5093ECE828B9A8D8 /* SwiftTableViewGroup-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = E30183AB7BF9EC13F0739D55D3D27787 /* SwiftTableViewGroup-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		388DC09583EE4729FF0A4F6749F02FB1 /* ViewRegisterGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = C1BD2F293BB5286A61AF9FF4F0B01798 /* ViewRegisterGroup.swift */; };
+		3F599960B15C7829D5ADAD0AE444B3C5 /* ViewRegister.swift in Sources */ = {isa = PBXBuildFile; fileRef = 7F1A55FD990FD6A71D989C694B5B2D97 /* ViewRegister.swift */; };
+		468A5484FB5E58825BB71C06980FB5CB /* UIScrollView+Delegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 31E5CEE9DB9BABBCAD27C5A48CD9407A /* UIScrollView+Delegate.swift */; };
+		473DD5CCD71762F419A3CB9FB20401F2 /* TableBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43DA2C85B3E9737F3A4C6C0A31EBE9AB /* TableBuilder.swift */; };
+		475EF920466CE71635FD3F7CE6EA34A8 /* TableCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = 2751987C73D5C54A9409A70058B1D85F /* TableCell.swift */; };
+		4918F22F90E918787F464C48D4279C48 /* SwiftTableViewGroup-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 08CD42E7EDB88A417BED3BC9B2B20E01 /* SwiftTableViewGroup-dummy.m */; };
+		50F41A2FFE38F4FF6771FB4ECECBF54F /* DataNode.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7F2AA16B63A9D97113F30D53C9BA5FF /* DataNode.swift */; };
+		7A4D822DC405D77BF2FAACA56C79E760 /* Pods-SwiftTableViewGroupApp-CocoaPods-dummy.m in Sources */ = {isa = PBXBuildFile; fileRef = 39080CB7977AC729D7B2B3BCD461F4E7 /* Pods-SwiftTableViewGroupApp-CocoaPods-dummy.m */; };
+		89D7BB45B67561149FC41AD13BFAC756 /* TableHeaderFooter.swift in Sources */ = {isa = PBXBuildFile; fileRef = B750B1B6A537FE3F753BDA6326292465 /* TableHeaderFooter.swift */; };
+		8FE02AC2454DA1E8C84FBE11022B86E2 /* Pods-SwiftTableViewGroupApp-CocoaPods-umbrella.h in Headers */ = {isa = PBXBuildFile; fileRef = 0B656CB224FCEF32916C79D308B17C44 /* Pods-SwiftTableViewGroupApp-CocoaPods-umbrella.h */; settings = {ATTRIBUTES = (Project, ); }; };
+		A9CF23B591177458999A63D73872B5A9 /* TableViewDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 465FC07EBE1F5E11E9C6D33D45B3A87C /* TableViewDelegate.swift */; };
+		B08ADECB28F850569030C03A6DC9135C /* TableSection.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3B01DF37CE456101B2C732DEF1219601 /* TableSection.swift */; };
+		C11AF9FB029267B8F8B75065E02D1C4B /* SectionGroup.swift in Sources */ = {isa = PBXBuildFile; fileRef = 46CE724AC3CC6928E0CDDED9BC8BE8AD /* SectionGroup.swift */; };
+		C41410BBF86550247A286125A510294C /* Group.swift in Sources */ = {isa = PBXBuildFile; fileRef = BCAAA07EBA8664A6C86F634A6EDFF33A /* Group.swift */; };
+		CF9F39DD4E2B92E7FA320C14499BDC56 /* DataNodeBuilder.swift in Sources */ = {isa = PBXBuildFile; fileRef = B8F2A145C146D1C6AE016D83E0FFB1C5 /* DataNodeBuilder.swift */; };
+		FFC1E6502D751501C748718F0F03018E /* TableView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 69D49B8BD4C309C6581A63B521C4D87B /* TableView.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		EF19E40143F1264E3238D2504F11E972 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 5DA84A66EDD9079461C22B53226348EB;
+			remoteInfo = SwiftTableViewGroup;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXFileReference section */
+		08CD42E7EDB88A417BED3BC9B2B20E01 /* SwiftTableViewGroup-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "SwiftTableViewGroup-dummy.m"; sourceTree = "<group>"; };
+		0B656CB224FCEF32916C79D308B17C44 /* Pods-SwiftTableViewGroupApp-CocoaPods-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "Pods-SwiftTableViewGroupApp-CocoaPods-umbrella.h"; sourceTree = "<group>"; };
+		20635A4DC3CD56C2876C57F1C439293E /* Pods-SwiftTableViewGroupApp-CocoaPods.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; path = "Pods-SwiftTableViewGroupApp-CocoaPods.modulemap"; sourceTree = "<group>"; };
+		2751987C73D5C54A9409A70058B1D85F /* TableCell.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableCell.swift; sourceTree = "<group>"; };
+		31E5CEE9DB9BABBCAD27C5A48CD9407A /* UIScrollView+Delegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = "UIScrollView+Delegate.swift"; path = "SwiftTableViewGroup/Sources/SwiftTableViewGroup/UIScrollView+Delegate.swift"; sourceTree = "<group>"; };
+		39080CB7977AC729D7B2B3BCD461F4E7 /* Pods-SwiftTableViewGroupApp-CocoaPods-dummy.m */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.objc; path = "Pods-SwiftTableViewGroupApp-CocoaPods-dummy.m"; sourceTree = "<group>"; };
+		3B01DF37CE456101B2C732DEF1219601 /* TableSection.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableSection.swift; sourceTree = "<group>"; };
+		43DA2C85B3E9737F3A4C6C0A31EBE9AB /* TableBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableBuilder.swift; sourceTree = "<group>"; };
+		465FC07EBE1F5E11E9C6D33D45B3A87C /* TableViewDelegate.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableViewDelegate.swift; sourceTree = "<group>"; };
+		46CE724AC3CC6928E0CDDED9BC8BE8AD /* SectionGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = SectionGroup.swift; sourceTree = "<group>"; };
+		4D266707EDAE48310417983348A49275 /* SwiftTableViewGroup-prefix.pch */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; path = "SwiftTableViewGroup-prefix.pch"; sourceTree = "<group>"; };
+		5561B1FB53DCAEB907DB46F5A2808E59 /* libPods-SwiftTableViewGroupApp-CocoaPods.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = "libPods-SwiftTableViewGroupApp-CocoaPods.a"; path = "libPods-SwiftTableViewGroupApp-CocoaPods.a"; sourceTree = BUILT_PRODUCTS_DIR; };
+		56F343F25DF3B7334B8DF15978307B38 /* Pods-SwiftTableViewGroupApp-CocoaPods-acknowledgements.plist */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.plist.xml; path = "Pods-SwiftTableViewGroupApp-CocoaPods-acknowledgements.plist"; sourceTree = "<group>"; };
+		61E7D660DCE73E2A48663223E2CDCD59 /* Pods-SwiftTableViewGroupApp-CocoaPods-acknowledgements.markdown */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; path = "Pods-SwiftTableViewGroupApp-CocoaPods-acknowledgements.markdown"; sourceTree = "<group>"; };
+		69D49B8BD4C309C6581A63B521C4D87B /* TableView.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableView.swift; sourceTree = "<group>"; };
+		6E97340B1C80BCEBB201D8C12CBEDB7A /* Pods-SwiftTableViewGroupApp-CocoaPods.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftTableViewGroupApp-CocoaPods.debug.xcconfig"; sourceTree = "<group>"; };
+		76C416C1384AEED99C30A531764A54E4 /* Pods-SwiftTableViewGroupApp-CocoaPods-frameworks.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftTableViewGroupApp-CocoaPods-frameworks.sh"; sourceTree = "<group>"; };
+		7F1A55FD990FD6A71D989C694B5B2D97 /* ViewRegister.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = ViewRegister.swift; path = SwiftTableViewGroup/Sources/SwiftTableViewGroup/ViewRegister.swift; sourceTree = "<group>"; };
+		91152DAC33F8EE09B8D8E16AE87D65E8 /* SwiftTableViewGroup.podspec */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; path = SwiftTableViewGroup.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */ = {isa = PBXFileReference; explicitFileType = text.script.ruby; includeInIndex = 1; lastKnownFileType = text; name = Podfile; path = ../Podfile; sourceTree = SOURCE_ROOT; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
+		97D913F1EA51D87B4A01EA7CB2D1108C /* SwiftTableViewGroup.modulemap */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.module; name = SwiftTableViewGroup.modulemap; path = ../../Headers/Public/SwiftTableViewGroup/SwiftTableViewGroup.modulemap; sourceTree = "<group>"; };
+		9B406365E0510930AEC2919D88BF3DAD /* Pods-SwiftTableViewGroupApp-CocoaPods.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = "Pods-SwiftTableViewGroupApp-CocoaPods.release.xcconfig"; sourceTree = "<group>"; };
+		B4A12EB9999BA1538C454629B73C7478 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; path = README.md; sourceTree = "<group>"; };
+		B750B1B6A537FE3F753BDA6326292465 /* TableHeaderFooter.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = TableHeaderFooter.swift; sourceTree = "<group>"; };
+		B8F2A145C146D1C6AE016D83E0FFB1C5 /* DataNodeBuilder.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataNodeBuilder.swift; path = SwiftTableViewGroup/Sources/SwiftTableViewGroup/DataNodeBuilder.swift; sourceTree = "<group>"; };
+		BCAAA07EBA8664A6C86F634A6EDFF33A /* Group.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = Group.swift; path = SwiftTableViewGroup/Sources/SwiftTableViewGroup/Group.swift; sourceTree = "<group>"; };
+		C1BD2F293BB5286A61AF9FF4F0B01798 /* ViewRegisterGroup.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; path = ViewRegisterGroup.swift; sourceTree = "<group>"; };
+		D6C92D3817965E3130406CA1750E083F /* libSwiftTableViewGroup.a */ = {isa = PBXFileReference; explicitFileType = archive.ar; includeInIndex = 0; name = libSwiftTableViewGroup.a; path = libSwiftTableViewGroup.a; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7F2AA16B63A9D97113F30D53C9BA5FF /* DataNode.swift */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.swift; name = DataNode.swift; path = SwiftTableViewGroup/Sources/SwiftTableViewGroup/DataNode.swift; sourceTree = "<group>"; };
+		D94B325E2DB9DDEE4577B8BC5E0DFE65 /* SwiftTableViewGroup.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; path = SwiftTableViewGroup.xcconfig; sourceTree = "<group>"; };
+		E17816A435F74CF6AF87A4D53C98917F /* Pods-SwiftTableViewGroupApp-CocoaPods-resources.sh */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.script.sh; path = "Pods-SwiftTableViewGroupApp-CocoaPods-resources.sh"; sourceTree = "<group>"; };
+		E30183AB7BF9EC13F0739D55D3D27787 /* SwiftTableViewGroup-umbrella.h */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = sourcecode.c.h; name = "SwiftTableViewGroup-umbrella.h"; path = "../../Headers/Public/SwiftTableViewGroup/SwiftTableViewGroup-umbrella.h"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		7C1EA7726938740416E0B9618C8F1972 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		B3C28AB7572D9D7F295F03220B7F3342 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		415AA29CCF7995416A499494E0606247 /* SwiftTableViewGroup */ = {
+			isa = PBXGroup;
+			children = (
+				D7F2AA16B63A9D97113F30D53C9BA5FF /* DataNode.swift */,
+				B8F2A145C146D1C6AE016D83E0FFB1C5 /* DataNodeBuilder.swift */,
+				BCAAA07EBA8664A6C86F634A6EDFF33A /* Group.swift */,
+				31E5CEE9DB9BABBCAD27C5A48CD9407A /* UIScrollView+Delegate.swift */,
+				7F1A55FD990FD6A71D989C694B5B2D97 /* ViewRegister.swift */,
+				EB3A6501C1CA72F3103D4F3CC482F61C /* Pod */,
+				6B7C32B76EB0FB74BE0B07A492347581 /* Support Files */,
+				7B9E52DD52A354FD90B421CF3D36B46B /* UITableView */,
+			);
+			name = SwiftTableViewGroup;
+			path = ../..;
+			sourceTree = "<group>";
+		};
+		440E114EE304D20C9E100920EBB717B3 /* Pods-SwiftTableViewGroupApp-CocoaPods */ = {
+			isa = PBXGroup;
+			children = (
+				20635A4DC3CD56C2876C57F1C439293E /* Pods-SwiftTableViewGroupApp-CocoaPods.modulemap */,
+				61E7D660DCE73E2A48663223E2CDCD59 /* Pods-SwiftTableViewGroupApp-CocoaPods-acknowledgements.markdown */,
+				56F343F25DF3B7334B8DF15978307B38 /* Pods-SwiftTableViewGroupApp-CocoaPods-acknowledgements.plist */,
+				39080CB7977AC729D7B2B3BCD461F4E7 /* Pods-SwiftTableViewGroupApp-CocoaPods-dummy.m */,
+				76C416C1384AEED99C30A531764A54E4 /* Pods-SwiftTableViewGroupApp-CocoaPods-frameworks.sh */,
+				E17816A435F74CF6AF87A4D53C98917F /* Pods-SwiftTableViewGroupApp-CocoaPods-resources.sh */,
+				0B656CB224FCEF32916C79D308B17C44 /* Pods-SwiftTableViewGroupApp-CocoaPods-umbrella.h */,
+				6E97340B1C80BCEBB201D8C12CBEDB7A /* Pods-SwiftTableViewGroupApp-CocoaPods.debug.xcconfig */,
+				9B406365E0510930AEC2919D88BF3DAD /* Pods-SwiftTableViewGroupApp-CocoaPods.release.xcconfig */,
+			);
+			name = "Pods-SwiftTableViewGroupApp-CocoaPods";
+			path = "Target Support Files/Pods-SwiftTableViewGroupApp-CocoaPods";
+			sourceTree = "<group>";
+		};
+		6B7C32B76EB0FB74BE0B07A492347581 /* Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				97D913F1EA51D87B4A01EA7CB2D1108C /* SwiftTableViewGroup.modulemap */,
+				D94B325E2DB9DDEE4577B8BC5E0DFE65 /* SwiftTableViewGroup.xcconfig */,
+				08CD42E7EDB88A417BED3BC9B2B20E01 /* SwiftTableViewGroup-dummy.m */,
+				4D266707EDAE48310417983348A49275 /* SwiftTableViewGroup-prefix.pch */,
+				E30183AB7BF9EC13F0739D55D3D27787 /* SwiftTableViewGroup-umbrella.h */,
+			);
+			name = "Support Files";
+			path = "SwiftTableViewGroupApp-CocoaPods/Pods/Target Support Files/SwiftTableViewGroup";
+			sourceTree = "<group>";
+		};
+		7862707EED73C11A51F01C3AAA2274E3 /* Targets Support Files */ = {
+			isa = PBXGroup;
+			children = (
+				440E114EE304D20C9E100920EBB717B3 /* Pods-SwiftTableViewGroupApp-CocoaPods */,
+			);
+			name = "Targets Support Files";
+			sourceTree = "<group>";
+		};
+		7B9E52DD52A354FD90B421CF3D36B46B /* UITableView */ = {
+			isa = PBXGroup;
+			children = (
+				46CE724AC3CC6928E0CDDED9BC8BE8AD /* SectionGroup.swift */,
+				43DA2C85B3E9737F3A4C6C0A31EBE9AB /* TableBuilder.swift */,
+				2751987C73D5C54A9409A70058B1D85F /* TableCell.swift */,
+				B750B1B6A537FE3F753BDA6326292465 /* TableHeaderFooter.swift */,
+				3B01DF37CE456101B2C732DEF1219601 /* TableSection.swift */,
+				69D49B8BD4C309C6581A63B521C4D87B /* TableView.swift */,
+				465FC07EBE1F5E11E9C6D33D45B3A87C /* TableViewDelegate.swift */,
+				C1BD2F293BB5286A61AF9FF4F0B01798 /* ViewRegisterGroup.swift */,
+			);
+			name = UITableView;
+			path = SwiftTableViewGroup/Sources/SwiftTableViewGroup/UITableView;
+			sourceTree = "<group>";
+		};
+		7DB346D0F39D3F0E887471402A8071AB = {
+			isa = PBXGroup;
+			children = (
+				93A4A3777CF96A4AAC1D13BA6DCCEA73 /* Podfile */,
+				CDE83D0C576803BD6F234A30C63BAAB2 /* Development Pods */,
+				0F8D2E47FE03D3B91B51069F7C273AF4 /* Frameworks */,
+				B893D6BBF3A042B4F50BFC13EEB4FD3D /* Products */,
+				7862707EED73C11A51F01C3AAA2274E3 /* Targets Support Files */,
+			);
+			sourceTree = "<group>";
+		};
+		B893D6BBF3A042B4F50BFC13EEB4FD3D /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				5561B1FB53DCAEB907DB46F5A2808E59 /* libPods-SwiftTableViewGroupApp-CocoaPods.a */,
+				D6C92D3817965E3130406CA1750E083F /* libSwiftTableViewGroup.a */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		CDE83D0C576803BD6F234A30C63BAAB2 /* Development Pods */ = {
+			isa = PBXGroup;
+			children = (
+				415AA29CCF7995416A499494E0606247 /* SwiftTableViewGroup */,
+			);
+			name = "Development Pods";
+			sourceTree = "<group>";
+		};
+		EB3A6501C1CA72F3103D4F3CC482F61C /* Pod */ = {
+			isa = PBXGroup;
+			children = (
+				B4A12EB9999BA1538C454629B73C7478 /* README.md */,
+				91152DAC33F8EE09B8D8E16AE87D65E8 /* SwiftTableViewGroup.podspec */,
+			);
+			name = Pod;
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		7257FDDC0A9FF4DB177F5BF9E65652C9 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				06B1F37B18316F5C5093ECE828B9A8D8 /* SwiftTableViewGroup-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		9A8A8F1A368F636CC6B6ED45D3E2E82A /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				8FE02AC2454DA1E8C84FBE11022B86E2 /* Pods-SwiftTableViewGroupApp-CocoaPods-umbrella.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		5DA84A66EDD9079461C22B53226348EB /* SwiftTableViewGroup */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = FCF383CC1DA2E28C59C14ACA5BF55DDB /* Build configuration list for PBXNativeTarget "SwiftTableViewGroup" */;
+			buildPhases = (
+				222E2D5073F2AA53274689A238319F61 /* Sources */,
+				7C1EA7726938740416E0B9618C8F1972 /* Frameworks */,
+				7257FDDC0A9FF4DB177F5BF9E65652C9 /* Headers */,
+				8ADBEF71A331D051272773BF52D708A2 /* Copy generated compatibility header */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = SwiftTableViewGroup;
+			productName = SwiftTableViewGroup;
+			productReference = D6C92D3817965E3130406CA1750E083F /* libSwiftTableViewGroup.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+		7EA6F71503D026E99D450378E134746D /* Pods-SwiftTableViewGroupApp-CocoaPods */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = C3B2FDCE2B692E5ED340EBE3395545E4 /* Build configuration list for PBXNativeTarget "Pods-SwiftTableViewGroupApp-CocoaPods" */;
+			buildPhases = (
+				E0368952E8EA11B7AD79942E606C344A /* Sources */,
+				B3C28AB7572D9D7F295F03220B7F3342 /* Frameworks */,
+				9A8A8F1A368F636CC6B6ED45D3E2E82A /* Headers */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				DC63BA5A32B29B42B9041A4B8883F5F6 /* PBXTargetDependency */,
+			);
+			name = "Pods-SwiftTableViewGroupApp-CocoaPods";
+			productName = "Pods-SwiftTableViewGroupApp-CocoaPods";
+			productReference = 5561B1FB53DCAEB907DB46F5A2808E59 /* libPods-SwiftTableViewGroupApp-CocoaPods.a */;
+			productType = "com.apple.product-type.library.static";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D41D8CD98F00B204E9800998ECF8427E /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0930;
+				LastUpgradeCheck = 0930;
+			};
+			buildConfigurationList = 2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */;
+			compatibilityVersion = "Xcode 3.2";
+			developmentRegion = English;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+			);
+			mainGroup = 7DB346D0F39D3F0E887471402A8071AB;
+			productRefGroup = B893D6BBF3A042B4F50BFC13EEB4FD3D /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				7EA6F71503D026E99D450378E134746D /* Pods-SwiftTableViewGroupApp-CocoaPods */,
+				5DA84A66EDD9079461C22B53226348EB /* SwiftTableViewGroup */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		8ADBEF71A331D051272773BF52D708A2 /* Copy generated compatibility header */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h",
+				"${PODS_ROOT}/Headers/Public/SwiftTableViewGroup/SwiftTableViewGroup.modulemap",
+				"${PODS_ROOT}/Headers/Public/SwiftTableViewGroup/SwiftTableViewGroup-umbrella.h",
+			);
+			name = "Copy generated compatibility header";
+			outputPaths = (
+				"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap",
+				"${BUILT_PRODUCTS_DIR}/SwiftTableViewGroup-umbrella.h",
+				"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "COMPATIBILITY_HEADER_PATH=\"${BUILT_PRODUCTS_DIR}/Swift Compatibility Header/${PRODUCT_MODULE_NAME}-Swift.h\"\nMODULE_MAP_PATH=\"${BUILT_PRODUCTS_DIR}/${PRODUCT_MODULE_NAME}.modulemap\"\n\nditto \"${DERIVED_SOURCES_DIR}/${PRODUCT_MODULE_NAME}-Swift.h\" \"${COMPATIBILITY_HEADER_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SwiftTableViewGroup/SwiftTableViewGroup.modulemap\" \"${MODULE_MAP_PATH}\"\nditto \"${PODS_ROOT}/Headers/Public/SwiftTableViewGroup/SwiftTableViewGroup-umbrella.h\" \"${BUILT_PRODUCTS_DIR}\"\nprintf \"\\n\\nmodule ${PRODUCT_MODULE_NAME}.Swift {\\n  header \\\"${COMPATIBILITY_HEADER_PATH}\\\"\\n  requires objc\\n}\\n\" >> \"${MODULE_MAP_PATH}\"\n";
+			showEnvVarsInLog = 1;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		222E2D5073F2AA53274689A238319F61 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				50F41A2FFE38F4FF6771FB4ECECBF54F /* DataNode.swift in Sources */,
+				CF9F39DD4E2B92E7FA320C14499BDC56 /* DataNodeBuilder.swift in Sources */,
+				C41410BBF86550247A286125A510294C /* Group.swift in Sources */,
+				C11AF9FB029267B8F8B75065E02D1C4B /* SectionGroup.swift in Sources */,
+				4918F22F90E918787F464C48D4279C48 /* SwiftTableViewGroup-dummy.m in Sources */,
+				473DD5CCD71762F419A3CB9FB20401F2 /* TableBuilder.swift in Sources */,
+				475EF920466CE71635FD3F7CE6EA34A8 /* TableCell.swift in Sources */,
+				89D7BB45B67561149FC41AD13BFAC756 /* TableHeaderFooter.swift in Sources */,
+				B08ADECB28F850569030C03A6DC9135C /* TableSection.swift in Sources */,
+				FFC1E6502D751501C748718F0F03018E /* TableView.swift in Sources */,
+				A9CF23B591177458999A63D73872B5A9 /* TableViewDelegate.swift in Sources */,
+				468A5484FB5E58825BB71C06980FB5CB /* UIScrollView+Delegate.swift in Sources */,
+				3F599960B15C7829D5ADAD0AE444B3C5 /* ViewRegister.swift in Sources */,
+				388DC09583EE4729FF0A4F6749F02FB1 /* ViewRegisterGroup.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		E0368952E8EA11B7AD79942E606C344A /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				7A4D822DC405D77BF2FAACA56C79E760 /* Pods-SwiftTableViewGroupApp-CocoaPods-dummy.m in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		DC63BA5A32B29B42B9041A4B8883F5F6 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			name = SwiftTableViewGroup;
+			target = 5DA84A66EDD9079461C22B53226348EB /* SwiftTableViewGroup */;
+			targetProxy = EF19E40143F1264E3238D2504F11E972 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin XCBuildConfiguration section */
+		199D972A13F2B4C56847F7A89CCA83BC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_DEBUG=1",
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Debug;
+		};
+		37416BEF1001D6C46F32045B83A18F54 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 9B406365E0510930AEC2919D88BF3DAD /* Pods-SwiftTableViewGroupApp-CocoaPods.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftTableViewGroupApp-CocoaPods/Pods-SwiftTableViewGroupApp-CocoaPods.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		5E9239F3056055720896E3F917ABB2B2 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 6E97340B1C80BCEBB201D8C12CBEDB7A /* Pods-SwiftTableViewGroupApp-CocoaPods.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = NO;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MACH_O_TYPE = staticlib;
+				MODULEMAP_FILE = "Target Support Files/Pods-SwiftTableViewGroupApp-CocoaPods/Pods-SwiftTableViewGroupApp-CocoaPods.modulemap";
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PODS_ROOT = "$(SRCROOT)";
+				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.${PRODUCT_NAME:rfc1034identifier}";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		5FB8D93ED0F93F2042008758380F1B65 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D94B325E2DB9DDEE4577B8BC5E0DFE65 /* SwiftTableViewGroup.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftTableViewGroup/SwiftTableViewGroup-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MODULEMAP_FILE = Headers/Public/SwiftTableViewGroup/SwiftTableViewGroup.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SwiftTableViewGroup;
+				PRODUCT_NAME = SwiftTableViewGroup;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		89EE34DF541CAB262EF860C967D8DEA0 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = D94B325E2DB9DDEE4577B8BC5E0DFE65 /* SwiftTableViewGroup.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=appletvos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "";
+				"CODE_SIGN_IDENTITY[sdk=watchos*]" = "";
+				GCC_PREFIX_HEADER = "Target Support Files/SwiftTableViewGroup/SwiftTableViewGroup-prefix.pch";
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MODULEMAP_FILE = Headers/Public/SwiftTableViewGroup/SwiftTableViewGroup.modulemap;
+				OTHER_LDFLAGS = "";
+				OTHER_LIBTOOLFLAGS = "";
+				PRIVATE_HEADERS_FOLDER_PATH = "";
+				PRODUCT_MODULE_NAME = SwiftTableViewGroup;
+				PRODUCT_NAME = SwiftTableViewGroup;
+				PUBLIC_HEADERS_FOLDER_PATH = "";
+				SDKROOT = iphoneos;
+				SKIP_INSTALL = YES;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = "$(inherited) ";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 5.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		FDB2FC4A1E5891381CD9D922145497F1 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_ENABLE_OBJC_WEAK = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGNING_ALLOWED = NO;
+				CODE_SIGNING_REQUIRED = NO;
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"POD_CONFIGURATION_RELEASE=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 9.0;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				STRIP_INSTALLED_PRODUCT = NO;
+				SYMROOT = "${SRCROOT}/../build";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		2D8E8EC45A3A1A1D94AE762CB5028504 /* Build configuration list for PBXProject "Pods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				199D972A13F2B4C56847F7A89CCA83BC /* Debug */,
+				FDB2FC4A1E5891381CD9D922145497F1 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		C3B2FDCE2B692E5ED340EBE3395545E4 /* Build configuration list for PBXNativeTarget "Pods-SwiftTableViewGroupApp-CocoaPods" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				5E9239F3056055720896E3F917ABB2B2 /* Debug */,
+				37416BEF1001D6C46F32045B83A18F54 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		FCF383CC1DA2E28C59C14ACA5BF55DDB /* Build configuration list for PBXNativeTarget "SwiftTableViewGroup" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				89EE34DF541CAB262EF860C967D8DEA0 /* Debug */,
+				5FB8D93ED0F93F2042008758380F1B65 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D41D8CD98F00B204E9800998ECF8427E /* Project object */;
+}

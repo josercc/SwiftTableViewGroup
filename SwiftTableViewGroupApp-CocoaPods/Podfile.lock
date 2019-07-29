@@ -1,0 +1,16 @@
+PODS:
+  - SwiftTableViewGroup (1.0.0)
+
+DEPENDENCIES:
+  - SwiftTableViewGroup (from `../SwiftTableViewGroup.podspec`)
+
+EXTERNAL SOURCES:
+  SwiftTableViewGroup:
+    :path: "../SwiftTableViewGroup.podspec"
+
+SPEC CHECKSUMS:
+  SwiftTableViewGroup: 7680efee857bcf1e5cfda7d3ca0df3387dedaedb
+
+PODFILE CHECKSUM: 2c8a560691720efaaf9fab5aee0990301590ba2a
+
+COCOAPODS: 1.5.2

@@ -1,0 +1,19 @@
+{
+  "name": "SwiftTableViewGroup",
+  "version": "1.0.0",
+  "summary": "SwiftTableViewGroup 是符合 SwiftUI 设计的 UITableView 数据驱动（SwiftTableViewGroup is a UITableView data driver compliant with SwiftUI design）",
+  "description": "SwiftTableViewGroup 是符合 SwiftUI 设计的 UITableView 数据驱动（SwiftTableViewGroup is a UITableView data driver compliant with SwiftUI design）",
+  "homepage": "https://github.com/josercc/SwiftTableViewGroup",
+  "license": "MIT",
+  "authors": {
+    "张行": "josercc@163.com"
+  },
+  "platforms": {
+    "ios": "9.0"
+  },
+  "source": {
+    "git": "https://github.com/josercc/SwiftTableViewGroup.git",
+    "tag": "1.0.0"
+  },
+  "source_files": "SwiftTableViewGroup/Sources/SwiftTableViewGroup/**/*.{swift}"
+}
