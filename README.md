@@ -34,8 +34,20 @@ typora-root-url: ../SwiftTableViewGroup
 
 ### Swift Package Manager(Xcode 11)
 
-```shell
+```ruby
 https://github.com/josercc/SwiftTableViewGroup
+```
+
+### CocoaPods
+
+```swift
+pod 'SwiftTableViewGroup'
+```
+
+### Carthage
+
+```ruby
+github "josercc/SwiftTableViewGroup"
 ```
 
 ## Claim(要求)

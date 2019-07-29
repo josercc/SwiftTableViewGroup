@@ -1,0 +1,4 @@
+framework module SwiftTableViewGroup {
+  header "SwiftTableViewGroup-Swift.h"
+  requires objc
+}

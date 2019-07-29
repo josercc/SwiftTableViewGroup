@@ -1,0 +1,19 @@
+{
+  "Mac" : [
+
+  ],
+  "watchOS" : [
+
+  ],
+  "tvOS" : [
+
+  ],
+  "commitish" : "abffc064cb113ee74e9718580f9e551dfe37f66b",
+  "iOS" : [
+    {
+      "name" : "SwiftTableViewGroup",
+      "hash" : "cc263d8536f3c72390c3271a1264b137a1560b78d4c9bf3aa6059c4e472d75fe",
+      "swiftToolchainVersion" : "5.1 (swiftlang-1100.0.257.2 clang-1100.0.31.3)"
+    }
+  ]
+}

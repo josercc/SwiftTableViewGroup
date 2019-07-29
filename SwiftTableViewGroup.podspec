@@ -1,6 +1,6 @@
 Pod::Spec.new do |spec|
   spec.name         = "SwiftTableViewGroup"
-  spec.version      = "1.0.0"
+  spec.version      = "2.0.0"
   spec.summary      = "SwiftTableViewGroup 是符合 SwiftUI 设计的 UITableView 数据驱动（SwiftTableViewGroup is a UITableView data driver compliant with SwiftUI design）"
   # spec.description  = <<-DESC
   # SwiftTableViewGroup 是符合 SwiftUI 设计的 UITableView 数据驱动（SwiftTableViewGroup is a UITableView data driver compliant with SwiftUI design）
