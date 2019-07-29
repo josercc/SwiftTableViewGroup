@@ -43,14 +43,15 @@ extension TableViewDelegate : UITableViewDelegate {
         guard let cell = tableView.dequeueReusableCell(withIdentifier: tableCell.identifier) else {
             return 0
         }
-        let customHeight = tableCell.makeCustomHeight(view: cell, index: cellTuple.index)
-        if customHeight != -1 {
-            return customHeight;
-        }else if tableCell.height != -1 {
+        return realValue(zero: CGFloat(0), custom: { () -> CGFloat in
+            return tableCell.makeCustomHeight(view: cell, index: cellTuple.index)
+        }, setting: { () -> CGFloat in
             return tableCell.height
-        } else {
+        }, layout: { () -> CGFloat in
             tableCell.makeConfig(view: cell, index: cellTuple.index)
             return cell.sizeThatFits(CGSize(width: tableView.frame.width, height: 0)).height
+        }) { () -> CGFloat in
+            return 0
         }
     }
     
@@ -59,14 +60,15 @@ extension TableViewDelegate : UITableViewDelegate {
         guard let header = tableSection.header, let tableHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: header.identifier) else {
             return 0
         }
-        let customHeight = header.makeCustomHeight(view: tableHeader, index: section)
-        if customHeight != -1 {
-            return customHeight
-        } else if header.height != -1 {
-            return header.height
-        } else {
+        return realValue(zero: CGFloat(0), custom: { () -> CGFloat in
+            header.makeCustomHeight(view: tableHeader, index: section)
+        }, setting: { () -> CGFloat in
+            header.height
+        }, layout: { () -> CGFloat in
             header.makeConfig(view: tableHeader, index: section)
-            return tableHeader.sizeThatFits(CGSize(width: tableView.frame.width, height: 0)).height
+                        return tableHeader.sizeThatFits(CGSize(width: tableView.frame.width, height: 0)).height
+        }) { () -> CGFloat in
+            CGFloat(0)
         }
     }
     
@@ -75,14 +77,15 @@ extension TableViewDelegate : UITableViewDelegate {
         guard let footer = tableSection.footer, let tableFooter = tableView.dequeueReusableHeaderFooterView(withIdentifier: footer.identifier) else {
             return 0
         }
-        let customHeight = footer.makeCustomHeight(view: tableFooter, index: section)
-        if customHeight != -1 {
-            return customHeight
-        } else if footer.height != -1 {
-            return footer.height
-        } else {
+        return realValue(zero: CGFloat(0), custom: { () -> CGFloat in
+            footer.makeCustomHeight(view: tableFooter, index: section)
+        }, setting: { () -> CGFloat in
+            footer.height
+        }, layout: { () -> CGFloat in
             footer.makeConfig(view: tableFooter, index: section)
             return tableFooter.sizeThatFits(CGSize(width: tableView.frame.width, height: 0)).height
+        }) { () -> CGFloat in
+            CGFloat(0)
         }
     }
     

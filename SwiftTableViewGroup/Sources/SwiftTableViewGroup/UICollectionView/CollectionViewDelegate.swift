@@ -88,49 +88,52 @@ extension CollectionViewDelegate : UICollectionViewDelegateFlowLayout {
         let collectionSection = self.dataSource.sections[indexPath.section]
         let cellTuple = collectionSection.cell(index: indexPath.row)
         let collectionCell = cellTuple.cell
-        let cell = collectionView.dequeueReusableCell(withReuseIdentifier: collectionCell.identifier, for: indexPath)
-        let customSize = collectionCell.makeCustomSize(view: cell, index: cellTuple.index)
-        if customSize != CGSize(width: -1, height: -1) {
-            return customSize
-        } else if collectionCell.size != CGSize(width: -1, height: -1) {
+        return realValue(zero: CGSize.zero,
+                         custom: { () -> CGSize in
+            return collectionCell.makeCustomSize(index: cellTuple.index)
+        }, setting: { () -> CGSize in
             return collectionCell.size
-        } else if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout {
-            return flowLayout.itemSize
-        } else {
+        }, layout: { () -> CGSize in
+            let size = (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.itemSize
+            return size ?? CGSize.zero
+        }) { () -> CGSize in
             return CGSize.zero
         }
     }
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, insetForSectionAt section: Int) -> UIEdgeInsets {
-        if let block = self.dataSource.insetBlock {
-            return block(section)
-        } else if self.dataSource.inset != UIEdgeInsets.zero {
+        return realValue(zero: UIEdgeInsets.zero,
+                         custom: { () -> UIEdgeInsets in
+            return self.dataSource.insetBlock?(section) ?? UIEdgeInsets.zero
+        }, setting: { () -> UIEdgeInsets in
             return self.dataSource.inset
-        } else if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
-            return flowLayout.sectionInset
-        } else {
+        }, layout: { () -> UIEdgeInsets in
+            return (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.sectionInset ?? UIEdgeInsets.zero
+        }) { () -> UIEdgeInsets in
             return UIEdgeInsets.zero
         }
     }
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumLineSpacingForSectionAt section: Int) -> CGFloat {
-        if let block = self.dataSource.minimumLineSpacingBlock {
-            return block(section)
-        } else if self.dataSource.minimumLineSpacing != 0 {
+        return realValue(zero: CGFloat(0),
+                         custom: { () -> CGFloat in
+                            return self.dataSource.minimumLineSpacingBlock?(section) ?? CGFloat(0)
+        }, setting: { () -> CGFloat in
             return self.dataSource.minimumLineSpacing
-        } else if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
-            return flowLayout.minimumLineSpacing
-        } else {
-            return 0
+        }, layout: { () -> CGFloat in
+            return (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.minimumLineSpacing ?? CGFloat(0)
+        }) { () -> CGFloat in
+            return CGFloat(0)
         }
     }
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, minimumInteritemSpacingForSectionAt section: Int) -> CGFloat {
-        if let block = self.dataSource.minimumInteritemSpacingBlock {
-            return block(section)
-        } else if self.dataSource.minimumInteritemSpacing != 0 {
+        return realValue(zero: CGFloat(0),
+                         custom: { () -> CGFloat in
+            return self.dataSource.minimumInteritemSpacingBlock?(section) ?? CGFloat(0)
+        }, setting: { () -> CGFloat in
             return self.dataSource.minimumInteritemSpacing
-        } else if let flowLayout = collectionView.collectionViewLayout as? UICollectionViewFlowLayout{
-            return flowLayout.minimumInteritemSpacing
-        } else {
-            return 0
+        }, layout: { () -> CGFloat in
+            return (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.minimumLineSpacing ?? CGFloat(0)
+        }) { () -> CGFloat in
+            return CGFloat(0)
         }
     }
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForHeaderInSection section: Int) -> CGSize {
@@ -138,15 +141,15 @@ extension CollectionViewDelegate : UICollectionViewDelegateFlowLayout {
         guard let header = collectionSection.header else {
             return CGSize.zero
         }
-        let headerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionHeader, withReuseIdentifier: header.identifier, for: IndexPath(row: 0, section: section))
-        let customSize = header.makeCustomSize(view: headerView, index: section)
-        if customSize != CGSize(width: -1, height: -1) {
-            return customSize
-        } else if header.size != CGSize(width: -1, height: -1) {
+        return realValue(zero: CGSize.zero,
+                         custom: { () -> CGSize in
+            return header.makeCustomSize(index: section)
+        }, setting: { () -> CGSize in
             return header.size
-        } else {
-            header.makeConfig(view: headerView, index: section)
-            return headerView.sizeThatFits(CGSize.zero)
+        }, layout: { () -> CGSize in
+            return (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.headerReferenceSize ?? CGSize.zero
+        }) { () -> CGSize in
+            return CGSize.zero
         }
     }
     public func collectionView(_ collectionView: UICollectionView, layout collectionViewLayout: UICollectionViewLayout, referenceSizeForFooterInSection section: Int) -> CGSize {
@@ -154,15 +157,17 @@ extension CollectionViewDelegate : UICollectionViewDelegateFlowLayout {
         guard let footer = collectionSection.footer else {
             return CGSize.zero
         }
-        let footerView = collectionView.dequeueReusableSupplementaryView(ofKind: UICollectionView.elementKindSectionFooter, withReuseIdentifier: footer.identifier, for: IndexPath(row: 0, section: section))
-        let customSize = footer.makeCustomSize(view: footerView, index: section)
-        if customSize != CGSize(width: -1, height: -1) {
-            return customSize
-        } else if footer.size != CGSize(width: -1, height: -1) {
+        return realValue(zero: CGSize.zero,
+                         custom: { () -> CGSize in
+            return footer.makeCustomSize(index: section)
+        }, setting: { () -> CGSize in
             return footer.size
-        } else {
-            footer.makeConfig(view: footerView, index: section)
-            return footerView.sizeThatFits(CGSize.zero)
+        }, layout: { () -> CGSize in
+            return (collectionView.collectionViewLayout as? UICollectionViewFlowLayout)?.headerReferenceSize ?? CGSize.zero
+        }) { () -> CGSize in
+            return CGSize.zero
         }
     }
+    
+    
 }

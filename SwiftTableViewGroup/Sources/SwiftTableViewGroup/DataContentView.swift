@@ -13,14 +13,13 @@ public class BlockContent {
         case didSelectRow
         case customHeight
         case customSize
-        case custonInset
     }
-    public var view:UIView
+    public var view:UIView?
     public var index:Int
     public var blockType:BlockType
-    public var customHeight:CGFloat = -1
-    public var customSize:CGSize = CGSize(width: -1, height: -1)
-    init(view:UIView, index:Int, blockType:BlockType) {
+    public var customHeight:CGFloat = 0
+    public var customSize:CGSize = .zero
+    init(view:UIView? = nil, index:Int, blockType:BlockType) {
         self.view = view
         self.index = index
         self.blockType = blockType
@@ -44,13 +43,13 @@ public class BlockContent {
         }
         self.customHeight = block(contentView,self.index)
     }
-    public func customSize<V:UIView>(_ type:V.Type = V.self, _ block:(V,Int) -> CGSize) {
-        guard let contentView = self.view as? V, self.blockType == .customSize else {
+    
+    public func customSize(_ block:(Int) -> CGSize) {
+        guard self.blockType == .customSize else {
             return
         }
-        self.customSize = block(contentView,self.index)
+        self.customSize = block(self.index)
     }
-    
 }
 
 
@@ -61,7 +60,7 @@ public protocol ContentView  {
     func makeConfig(view:UIView, index:Int)
     func makeDidSelectRow(view:UIView, index:Int)
     func makeCustomHeight(view:UIView, index:Int) -> CGFloat
-    func makeCustomSize(view:UIView, index:Int) -> CGSize
+    func makeCustomSize(index:Int) -> CGSize
 }
 
 extension ContentView {
@@ -78,8 +77,8 @@ extension ContentView {
         self.makeTypeBlock?(content,self)
         return content.customHeight
     }
-    public func makeCustomSize(view:UIView, index:Int) -> CGSize {
-        let content = BlockContent(view: view, index: index, blockType: .customSize)
+    public func makeCustomSize(index:Int) -> CGSize {
+        let content = BlockContent(index: index, blockType: .customSize)
         self.makeTypeBlock?(content,self)
         return content.customSize
     }
@@ -91,5 +90,21 @@ public class DataContentView : ViewRegister {
     public init(anyClass:AnyClass) {
         self.anyClass = anyClass
         self.identifier = "\(anyClass)"
+    }
+}
+
+public func realValue<V:Equatable>(zero:V, custom:() -> V, setting:() -> V, layout:() -> V, normal:() -> V) -> V {
+    let customValue = custom()
+    let settingValue = setting()
+    let layoutSize = layout()
+    let normalSize = normal()
+    if customValue != zero  {
+        return customValue
+    } else if settingValue != zero {
+        return settingValue
+    } else if layoutSize != zero {
+        return layoutSize
+    } else {
+        return normalSize
     }
 }
