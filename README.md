@@ -11,6 +11,18 @@ typora-root-url: ../SwiftTableViewGroup
 
 [TOC]
 
+## 代码例子
+
+![Snipaste_2019-07-29_14-11-01](/images/Snipaste_2019-07-29_14-11-01-4381583.png)
+
+![Snipaste_2019-07-29_14-13-30](/images/Snipaste_2019-07-29_14-13-30.png)
+
+![Snipaste_2019-07-29_14-18-03](/images/Snipaste_2019-07-29_14-18-03.png)
+
+
+
+![Snipaste_2019-07-29_14-19-23](/images/Snipaste_2019-07-29_14-19-23.png)
+
 ## ChangeLog(更新记录)
 
 ### v2.0.0
@@ -19,16 +31,6 @@ typora-root-url: ../SwiftTableViewGroup
 - Changing `Api` is easier to use(更改`Api`使用更简单)
 - Support for custom height or size(支持自定义高度或者大小)
 - Safer to use(使用更加安全)
-
-## Demo(例子)
-
-![image-20190729103132510](/images/image-20190729103132510.png)
-
-![image-20190726143633679](/images/2019-07-26-063634.png)
-
-![image-20190726143714253](/images/image-20190726143714253.png)
-
-![image-20190729103652825](/images//image-20190729103652825.png)
 
 ## 安装
 
