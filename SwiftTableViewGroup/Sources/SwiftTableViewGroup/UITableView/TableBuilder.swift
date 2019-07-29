@@ -10,7 +10,7 @@ import UIKit.UITableViewHeaderFooterView
 @_functionBuilder
 public struct TableBuilder {
     public static func buildBlock(_ nodes:DataNode...) -> DataNode {
-        var group = SectionGroup()
+        var group = TableSectionGroup()
         if let _ = nodes.first as? TableSection {
             for node in nodes {
                 if let section = node as? TableSection {
@@ -19,7 +19,7 @@ public struct TableBuilder {
             }
         } else {
             let section = TableSection {
-                SectionBuilder.tableSection(nodes: nodes)
+                TableSectionBuilder.tableSection(nodes: nodes)
             }
             group.sections.append(section)
         }
@@ -31,25 +31,25 @@ public struct TableBuilder {
 
 
 @_functionBuilder
-public struct SectionBuilder {
+public struct TableSectionBuilder {
     public static func buildBlock<Content:ViewRegister>(_ contents:Content...) -> DataNode {
         return self.tableSection(nodes: contents)
     }
     
-    public static func tableSection(nodes:[DataNode]) -> ViewRegisterGroup {
-            var header:TableHeaderFooterView?
-            var footer:TableHeaderFooterView?
+    public static func tableSection(nodes:[DataNode]) -> TableViewRegiterGroup {
+            var header:TableHeaderView?
+            var footer:TableFooterView?
             var cells:[TableCell] = [TableCell]()
             for node in nodes {
-                if let _header = node as? TableHeaderFooterView, _header.viewType == .header {
+                if let _header = node as? TableHeaderView {
                     header = _header
-                } else if let _footer = node as? TableHeaderFooterView, _footer.viewType == .footer {
+                } else if let _footer = node as? TableFooterView {
                     footer = _footer
                 } else if let cell = node as? TableCell {
                     cells.append(cell)
                 }
             }
             
-            return ViewRegisterGroup(header: header, footer: footer, cells: cells)
+            return TableViewRegiterGroup(header: header, footer: footer, cells: cells)
     }
 }

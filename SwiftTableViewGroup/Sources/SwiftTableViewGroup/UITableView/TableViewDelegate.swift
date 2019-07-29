@@ -25,7 +25,7 @@ extension TableViewDelegate : UITableViewDataSource {
         let cellTuple = section.cell(index: indexPath.row)
         let tableCell = cellTuple.cell
         let cell = tableView.dequeueReusableCell(withIdentifier: tableCell.identifier, for: indexPath)
-        tableCell.makeCellConfig(cell: cell, index: cellTuple.index)
+        tableCell.makeConfig(view: cell, index: cellTuple.index)
         return cell
     }
     
@@ -40,46 +40,52 @@ extension TableViewDelegate : UITableViewDelegate {
         let section = self.dataSource.sections[indexPath.section]
         let cellTuple = section.cell(index: indexPath.row)
         let tableCell = cellTuple.cell
-        if tableCell.height != 0 {
+        guard let cell = tableView.dequeueReusableCell(withIdentifier: tableCell.identifier) else {
+            return 0
+        }
+        return realValue(zero: CGFloat(0), custom: { () -> CGFloat in
+            return tableCell.makeCustomHeight(view: cell, index: cellTuple.index)
+        }, setting: { () -> CGFloat in
             return tableCell.height
-        } else {
-            guard let cell = tableView.dequeueReusableCell(withIdentifier: tableCell.identifier) else {
-                return 0
-            }
-            tableCell.makeCellConfig(cell: cell, index: cellTuple.index)
+        }, layout: { () -> CGFloat in
+            tableCell.makeConfig(view: cell, index: cellTuple.index)
             return cell.sizeThatFits(CGSize(width: tableView.frame.width, height: 0)).height
+        }) { () -> CGFloat in
+            return 0
         }
     }
     
     public func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         let tableSection = self.dataSource.sections[section]
-        guard let header = tableSection.header else {
+        guard let header = tableSection.header, let tableHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: header.identifier) else {
             return 0
         }
-        if header.height != 0 {
-            return header.height
-        } else {
-            guard let tableHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: header.identifier) else {
-                return 0
-            }
-            header.makeHeaderFooterConfig(headerFooter: tableHeader, section: section)
-            return tableHeader.sizeThatFits(CGSize(width: tableView.frame.width, height: 0)).height
+        return realValue(zero: CGFloat(0), custom: { () -> CGFloat in
+            header.makeCustomHeight(view: tableHeader, index: section)
+        }, setting: { () -> CGFloat in
+            header.height
+        }, layout: { () -> CGFloat in
+            header.makeConfig(view: tableHeader, index: section)
+                        return tableHeader.sizeThatFits(CGSize(width: tableView.frame.width, height: 0)).height
+        }) { () -> CGFloat in
+            CGFloat(0)
         }
     }
     
     public func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         let tableSection = self.dataSource.sections[section]
-        guard let footer = tableSection.footer else {
+        guard let footer = tableSection.footer, let tableFooter = tableView.dequeueReusableHeaderFooterView(withIdentifier: footer.identifier) else {
             return 0
         }
-        if footer.height != 0 {
-            return footer.height
-        } else {
-            guard let tableFooter = tableView.dequeueReusableHeaderFooterView(withIdentifier: footer.identifier) else {
-                return 0
-            }
-            footer.makeHeaderFooterConfig(headerFooter: tableFooter, section: section)
+        return realValue(zero: CGFloat(0), custom: { () -> CGFloat in
+            footer.makeCustomHeight(view: tableFooter, index: section)
+        }, setting: { () -> CGFloat in
+            footer.height
+        }, layout: { () -> CGFloat in
+            footer.makeConfig(view: tableFooter, index: section)
             return tableFooter.sizeThatFits(CGSize(width: tableView.frame.width, height: 0)).height
+        }) { () -> CGFloat in
+            CGFloat(0)
         }
     }
     
@@ -91,7 +97,7 @@ extension TableViewDelegate : UITableViewDelegate {
         guard let tableHeader = tableView.dequeueReusableHeaderFooterView(withIdentifier: header.identifier) else {
             return nil
         }
-        header.makeHeaderFooterConfig(headerFooter: tableHeader, section: section)
+        header.makeConfig(view: tableHeader, index: section)
         return tableHeader
     }
 
@@ -103,7 +109,7 @@ extension TableViewDelegate : UITableViewDelegate {
         guard let tableFooter = tableView.dequeueReusableHeaderFooterView(withIdentifier: footer.identifier) else {
             return nil
         }
-        footer.makeHeaderFooterConfig(headerFooter: tableFooter, section: section)
+        footer.makeConfig(view: tableFooter, index: section)
         return tableFooter
     }
     
@@ -114,7 +120,7 @@ extension TableViewDelegate : UITableViewDelegate {
         guard let cell = tableView.cellForRow(at: indexPath) else {
             return
         }
-        tableCell.makeCellDidSelectRow(cell: cell, index: cellTuple.index)
+        tableCell.makeDidSelectRow(view: cell, index: cellTuple.index)
         tableView.deselectRow(at: indexPath, animated: true)
     }
     
@@ -142,3 +148,4 @@ extension TableViewDelegate : UITableViewDelegate {
         scrollView.scrollDelegate?.scrollViewDidEndDecelerating?(scrollView)
     }
 }
+
