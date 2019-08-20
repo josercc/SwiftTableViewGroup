@@ -1,6 +1,0 @@
-module SwiftTableViewGroup {
-  umbrella header "SwiftTableViewGroup-umbrella.h"
-
-  export *
-  module * { export * }
-}
